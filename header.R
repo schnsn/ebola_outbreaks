@@ -28,10 +28,3 @@ ebola_data$Deaths <- as.numeric(as.character(ebola_data$Deaths))
 ebola_data$Cases <- as.numeric(as.character(ebola_data$Cases))
 ebola_data$Country[c(1,3,6)] <- "Democratic Republic of Congo"
 # ebola_data$Country[20] <- "Guinea/Liberia/Sierra Leone"     # why does this not work?!
-
-ebola_total <- ddply(
-  ebola_data, .(Year), summarise,
-  N = length(Cases),
-  Cases = sum(Cases),
-  Deaths = sum(Deaths)
-)
